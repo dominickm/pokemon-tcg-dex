@@ -36,4 +36,5 @@ class PokeService {
         let queryResult = try JSONDecoder().decode(CardQueryResult.self, from: data)
         let cards = queryResult.data
         return cards
+    }
 }
