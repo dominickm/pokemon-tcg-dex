@@ -25,4 +25,12 @@ class PokeService {
         return card
     }
     
+    func getCardsBasedOnQuery(queryParams: Dictionary<String, String>) async throws -> [Card] {
+        var queryString = ""
+        for key in queryParams.keys {
+            if queryParams[key] != nil {
+                queryString = key + ":" + queryParams[key] + " "
+            }
+        }
+        let (data, _) = try await URLSession.shared.data(from: URL(string: baseUrl + "?q=" + queryString))
 }
