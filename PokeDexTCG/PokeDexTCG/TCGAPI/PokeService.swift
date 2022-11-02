@@ -20,8 +20,9 @@ class PokeService {
     
     func getCardById(id: String) async throws -> Card {
         let (data, _) = try await URLSession.shared.data(from: URL(string: baseUrl + id)!)
-            let cardResult = try JSONDecoder().decode(CardResult.self, from: data)
-            let card = cardResult.data
-            return card
+        let cardResult = try JSONDecoder().decode(CardResult.self, from: data)
+        let card = cardResult.data
+        return card
     }
+    
 }
