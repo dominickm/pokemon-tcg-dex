@@ -15,7 +15,18 @@
 		278EADBF2911F0A500BFB09D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278EADBE2911F0A500BFB09D /* ContentView.swift */; };
 		278EADC12911F0A700BFB09D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278EADC02911F0A700BFB09D /* Assets.xcassets */; };
 		278EADC52911F0A700BFB09D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278EADC42911F0A700BFB09D /* Preview Assets.xcassets */; };
+		27A5F6412912253F009702E4 /* PokeDexTCGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5F6402912253F009702E4 /* PokeDexTCGTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27A5F6422912253F009702E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 278EADB12911F0A500BFB09D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 278EADB82911F0A500BFB09D;
+			remoteInfo = PokeDexTCG;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		272BE72E2911FA0000E3F556 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -28,10 +39,19 @@
 		278EADC02911F0A700BFB09D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		278EADC22911F0A700BFB09D /* PokeDexTCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PokeDexTCG.entitlements; sourceTree = "<group>"; };
 		278EADC42911F0A700BFB09D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27A5F63E2912253F009702E4 /* PokeDexTCGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeDexTCGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27A5F6402912253F009702E4 /* PokeDexTCGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDexTCGTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		278EADB62911F0A500BFB09D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27A5F63B2912253F009702E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				278EADBB2911F0A500BFB09D /* PokeDexTCG */,
+				27A5F63F2912253F009702E4 /* PokeDexTCGTests */,
 				278EADBA2911F0A500BFB09D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				278EADB92911F0A500BFB09D /* PokeDexTCG.app */,
+				27A5F63E2912253F009702E4 /* PokeDexTCGTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +119,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		27A5F63F2912253F009702E4 /* PokeDexTCGTests */ = {
+			isa = PBXGroup;
+			children = (
+				27A5F6402912253F009702E4 /* PokeDexTCGTests.swift */,
+			);
+			path = PokeDexTCGTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,6 +147,24 @@
 			productReference = 278EADB92911F0A500BFB09D /* PokeDexTCG.app */;
 			productType = "com.apple.product-type.application";
 		};
+		27A5F63D2912253F009702E4 /* PokeDexTCGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27A5F64429122540009702E4 /* Build configuration list for PBXNativeTarget "PokeDexTCGTests" */;
+			buildPhases = (
+				27A5F63A2912253F009702E4 /* Sources */,
+				27A5F63B2912253F009702E4 /* Frameworks */,
+				27A5F63C2912253F009702E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27A5F6432912253F009702E4 /* PBXTargetDependency */,
+			);
+			name = PokeDexTCGTests;
+			productName = PokeDexTCGTests;
+			productReference = 27A5F63E2912253F009702E4 /* PokeDexTCGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -129,6 +177,10 @@
 				TargetAttributes = {
 					278EADB82911F0A500BFB09D = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					27A5F63D2912253F009702E4 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 278EADB82911F0A500BFB09D;
 					};
 				};
 			};
@@ -146,6 +198,7 @@
 			projectRoot = "";
 			targets = (
 				278EADB82911F0A500BFB09D /* PokeDexTCG */,
+				27A5F63D2912253F009702E4 /* PokeDexTCGTests */,
 			);
 		};
 /* End PBXProject section */
@@ -157,6 +210,13 @@
 			files = (
 				278EADC52911F0A700BFB09D /* Preview Assets.xcassets in Resources */,
 				278EADC12911F0A700BFB09D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27A5F63C2912253F009702E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +236,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27A5F63A2912253F009702E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27A5F6412912253F009702E4 /* PokeDexTCGTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27A5F6432912253F009702E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 278EADB82911F0A500BFB09D /* PokeDexTCG */;
+			targetProxy = 27A5F6422912253F009702E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		278EADC62911F0A700BFB09D /* Debug */ = {
@@ -319,7 +395,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.md.PokeDexTCG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -357,10 +435,53 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.md.PokeDexTCG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		27A5F64529122540009702E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WN8A7FYZCS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.md.PokeDexTCGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeDexTCG.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PokeDexTCG";
+			};
+			name = Debug;
+		};
+		27A5F64629122540009702E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WN8A7FYZCS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.md.PokeDexTCGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeDexTCG.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PokeDexTCG";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -381,6 +502,15 @@
 			buildConfigurations = (
 				278EADC92911F0A700BFB09D /* Debug */,
 				278EADCA2911F0A700BFB09D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27A5F64429122540009702E4 /* Build configuration list for PBXNativeTarget "PokeDexTCGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27A5F64529122540009702E4 /* Debug */,
+				27A5F64629122540009702E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
