@@ -33,4 +33,7 @@ class PokeService {
             }
         }
         let (data, _) = try await URLSession.shared.data(from: URL(string: baseUrl + "?q=" + queryString))
+        let queryResult = try JSONDecoder().decode(CardQueryResult.self, from: data)
+        let cards = queryResult.data
+        return cards
 }
