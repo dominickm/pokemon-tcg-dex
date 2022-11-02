@@ -11,10 +11,15 @@ struct ContentView: View {
     @State var card: Card?
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            AsyncImage(url: card?.highResImageURL,
+                       content: { image in
+                           image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                                .scaledToFit()
+                       },
+                       placeholder: {
+                           ProgressView()
+                       })
         }
         .padding()
         .task {
