@@ -16,6 +16,18 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .task {
+            await loadCard()
+        }
+    }
+    
+    func loadCard() async {
+        do {
+            let result: () = try await PokeService.instance.getCardById(id:"xy1-1")
+            print(result)
+        } catch {
+            print("failed")
+        }
     }
 }
 

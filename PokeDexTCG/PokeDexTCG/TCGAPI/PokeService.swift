@@ -9,8 +9,8 @@ import Foundation
 
 class PokeService {
     
-    let instance = PokeService(apiKey: Bundle.main.infoDictionary?["POKE_KEY"] as? String)
-
+    static var instance = PokeService(apiKey: Bundle.main.infoDictionary?["POKE_KEY"] as? String)
+    
     let baseUrl = "https://api.pokemontcg.io/v2/cards/"
     let apiKey: String?
     
@@ -18,7 +18,16 @@ class PokeService {
         self.apiKey = apiKey
     }
     
-    func getCardById(id: String) {
-        
+    func getCardById(id: String) async throws {
+        let (data, _) = try await URLSession.shared.data(from: URL(string: baseUrl + id)!)
+        do {
+            let cardResult = try JSONDecoder().decode(CardResult.self, from: data)
+            let card = cardResult.data
+            print(card)
+        } catch let error {
+            print(error)
+        }
+        print(data)
     }
+    
 }
