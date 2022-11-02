@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var card: Card?
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -23,8 +24,9 @@ struct ContentView: View {
     
     func loadCard() async {
         do {
-            let result: () = try await PokeService.instance.getCardById(id:"xy1-1")
-            print(result)
+            let card = try await PokeService.instance.getCardById(id:"xy1-1")
+            self.card = card
+            print(self.card!)
         } catch {
             print("failed")
         }

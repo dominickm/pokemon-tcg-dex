@@ -18,16 +18,10 @@ class PokeService {
         self.apiKey = apiKey
     }
     
-    func getCardById(id: String) async throws {
+    func getCardById(id: String) async throws -> Card {
         let (data, _) = try await URLSession.shared.data(from: URL(string: baseUrl + id)!)
-        do {
             let cardResult = try JSONDecoder().decode(CardResult.self, from: data)
             let card = cardResult.data
-            print(card)
-        } catch let error {
-            print(error)
-        }
-        print(data)
+            return card
     }
-    
 }
