@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		272BE72F2911FA0000E3F556 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272BE72E2911FA0000E3F556 /* Card.swift */; };
+		272BE7312911FD7300E3F556 /* PokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272BE7302911FD7300E3F556 /* PokeService.swift */; };
 		278EADBD2911F0A500BFB09D /* PokeDexTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278EADBC2911F0A500BFB09D /* PokeDexTCGApp.swift */; };
 		278EADBF2911F0A500BFB09D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278EADBE2911F0A500BFB09D /* ContentView.swift */; };
 		278EADC12911F0A700BFB09D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278EADC02911F0A700BFB09D /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		272BE72E2911FA0000E3F556 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		272BE7302911FD7300E3F556 /* PokeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeService.swift; sourceTree = "<group>"; };
 		278EADB92911F0A500BFB09D /* PokeDexTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDexTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278EADBC2911F0A500BFB09D /* PokeDexTCGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDexTCGApp.swift; sourceTree = "<group>"; };
 		278EADBE2911F0A500BFB09D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				272BE72D2911F9CA00E3F556 /* Models */,
+				272BE7302911FD7300E3F556 /* PokeService.swift */,
 			);
 			path = TCGAPI;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272BE7312911FD7300E3F556 /* PokeService.swift in Sources */,
 				278EADBF2911F0A500BFB09D /* ContentView.swift in Sources */,
 				272BE72F2911FA0000E3F556 /* Card.swift in Sources */,
 				278EADBD2911F0A500BFB09D /* PokeDexTCGApp.swift in Sources */,
