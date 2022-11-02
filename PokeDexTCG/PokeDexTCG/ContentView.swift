@@ -23,7 +23,7 @@ struct ContentView: View {
         }
         .padding()
         .task {
-            await loadCard()
+            // await loadCard()
         }
     }
     

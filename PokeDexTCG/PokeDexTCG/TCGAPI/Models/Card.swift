@@ -15,7 +15,7 @@ struct Card: Decodable {
     var hp: String
     var types: Array<String>
     var evolvesFrom: String?
-    var evolvesTo: Array<String>  // we assume a list of len 0 is a final evolve state
+    var evolvesTo: Array<String>?  // we assume a list of len 0 is a final evolve state
     var images: Dictionary<String, URL>
     
     var lowResImageURL: URL? {

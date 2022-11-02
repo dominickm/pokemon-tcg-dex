@@ -28,11 +28,19 @@ class PokeService {
     func getCardsBasedOnQuery(queryParams: Dictionary<String, String>) async throws -> [Card] {
         var queryString = ""
         for key in queryParams.keys {
-            if queryParams[key] != nil {
-                queryString = key + ":" + queryParams[key] + " "
+            guard queryParams[key]!.isEmpty else {
+                queryString = key + ":" + queryParams[key]! + " "
+                continue
             }
         }
-        let (data, _) = try await URLSession.shared.data(from: URL(string: baseUrl + "?q=" + queryString))
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.pokemontcg.io"
+        urlComponents.path = "/v2/cards"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "q", value: queryString)
+        ]
+        let (data, _) = try await URLSession.shared.data(from: urlComponents.url!)
         let queryResult = try JSONDecoder().decode(CardQueryResult.self, from: data)
         let cards = queryResult.data
         return cards
