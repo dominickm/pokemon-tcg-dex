@@ -9,16 +9,24 @@ import Foundation
 
 class PokeService {
     
-    static var instance = PokeService(apiKey: Bundle.main.infoDictionary?["POKE_KEY"] as? String)
+    static var instance = PokeService(apiKey: "c96ad60c-11f2-4b5b-be4d-872d57342378")
     
     let baseUrl = "https://api.pokemontcg.io/v2/cards/"
-    let apiKey: String?
+    let apiKey: String
     
-    private init(apiKey: String?) {
+    private init(apiKey: String) {
         self.apiKey = apiKey
     }
     
+    func urlRequestFromUrlString(urlString: String, method: String) -> URLRequest {
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.httpMethod = method
+        request.addValue(self.apiKey, forHTTPHeaderField: "X-Api-Key")
+        return request
+    }
+    
     func getCardById(id: String) async throws -> Card {
+
         let (data, _) = try await URLSession.shared.data(from: URL(string: baseUrl + id)!)
         let cardResult = try JSONDecoder().decode(CardResult.self, from: data)
         let card = cardResult.data
