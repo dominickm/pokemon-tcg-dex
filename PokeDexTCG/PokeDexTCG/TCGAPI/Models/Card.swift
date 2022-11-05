@@ -37,4 +37,8 @@ struct Card: Decodable {
         }
         return isBasic
     }
+    
+    var hasEvolution: Bool {
+        return !(self.evolvesTo?.isEmpty ?? true)
+    }
 }
