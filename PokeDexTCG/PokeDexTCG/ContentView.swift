@@ -34,6 +34,7 @@ struct ContentView: View {
             print(self.card!)
         } catch {
             print("failed")
+            print(error)
         }
     }
 }

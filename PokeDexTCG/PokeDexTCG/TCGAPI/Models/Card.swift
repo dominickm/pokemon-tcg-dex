@@ -17,7 +17,7 @@ struct Card: Decodable {
     var evolvesFrom: String?
     var evolvesTo: Array<String>?  // we assume a list of len 0 is a final evolve state
     var images: Dictionary<String, URL>
-    var weaknesses: Array<String>?
+    var weaknesses: Array<Dictionary<String, String>>
     var retreatCost: Array<String>
     var convertedRetreatCost: Int
     var subtypes: Array<String>
