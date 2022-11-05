@@ -17,6 +17,10 @@ struct Card: Decodable {
     var evolvesFrom: String?
     var evolvesTo: Array<String>?  // we assume a list of len 0 is a final evolve state
     var images: Dictionary<String, URL>
+    var weaknesses: Array<String>?
+    var retreatCost: Array<String>
+    var convertedRetreatCost: Int
+    var subtypes: Array<String>
     
     var lowResImageURL: URL? {
         return self.images["small"]
@@ -24,5 +28,13 @@ struct Card: Decodable {
     
     var highResImageURL: URL? {
         return self.images["large"]
+    }
+    
+    var isBasic: Bool {
+        var isBasic = false
+        if self.subtypes.contains("Basic") {
+            isBasic = true
+        }
+        return isBasic
     }
 }
