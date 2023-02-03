@@ -23,7 +23,7 @@ struct ContentView: View {
         }
         .padding()
         .task {
-            // await loadCard()
+            await loadCard()
         }
     }
     
@@ -34,6 +34,7 @@ struct ContentView: View {
             print(self.card!)
         } catch {
             print("failed")
+            print(error)
         }
     }
 }

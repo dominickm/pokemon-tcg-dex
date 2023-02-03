@@ -11,12 +11,20 @@ import Foundation
 
 struct Card: Decodable {
     var id: String
+    var artist: String
+    var rarity: String
+    var number: String
+    var nationalPokedexNumbers: Array<Int>
     var name: String
     var hp: String
     var types: Array<String>
     var evolvesFrom: String?
     var evolvesTo: Array<String>?  // we assume a list of len 0 is a final evolve state
     var images: Dictionary<String, URL>
+    var weaknesses: Array<Dictionary<String, String>>
+    var retreatCost: Array<String>
+    var convertedRetreatCost: Int
+    var subtypes: Array<String>
     
     var lowResImageURL: URL? {
         return self.images["small"]
@@ -24,5 +32,17 @@ struct Card: Decodable {
     
     var highResImageURL: URL? {
         return self.images["large"]
+    }
+    
+    var isBasic: Bool {
+        var isBasic = false
+        if self.subtypes.contains("Basic") {
+            isBasic = true
+        }
+        return isBasic
+    }
+    
+    var hasEvolution: Bool {
+        return !(self.evolvesTo?.isEmpty ?? true)
     }
 }
