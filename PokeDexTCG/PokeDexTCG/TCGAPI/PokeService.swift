@@ -9,7 +9,7 @@ import Foundation
 
 class PokeService {
     
-    static var instance = PokeService(apiKey: "c96ad60c-11f2-4b5b-be4d-872d57342378")
+    static var instance = PokeService(apiKey: Bundle.main.infoDictionary!["API_KEY"] as! String)
     
     let baseUrl = "https://api.pokemontcg.io/v2/cards/"
     let apiKey: String
