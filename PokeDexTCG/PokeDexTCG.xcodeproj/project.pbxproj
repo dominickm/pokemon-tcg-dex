@@ -41,6 +41,7 @@
 		278EADC42911F0A700BFB09D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27A5F63E2912253F009702E4 /* PokeDexTCGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeDexTCGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A5F6402912253F009702E4 /* PokeDexTCGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDexTCGTests.swift; sourceTree = "<group>"; };
+		27E25C17298DCC2E00703D45 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 			children = (
 				272BE72D2911F9CA00E3F556 /* Models */,
 				272BE7302911FD7300E3F556 /* PokeService.swift */,
+				27E25C17298DCC2E00703D45 /* Config.xcconfig */,
 			);
 			path = TCGAPI;
 			sourceTree = "<group>";
