@@ -16,6 +16,8 @@
 		278EADC12911F0A700BFB09D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278EADC02911F0A700BFB09D /* Assets.xcassets */; };
 		278EADC52911F0A700BFB09D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278EADC42911F0A700BFB09D /* Preview Assets.xcassets */; };
 		27A5F6412912253F009702E4 /* PokeDexTCGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5F6402912253F009702E4 /* PokeDexTCGTests.swift */; };
+		27E25C20298DD31900703D45 /* BinderPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E25C1F298DD31900703D45 /* BinderPageView.swift */; };
+		27E25C21298DD31900703D45 /* BinderPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E25C1F298DD31900703D45 /* BinderPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,7 @@
 		27A5F6402912253F009702E4 /* PokeDexTCGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDexTCGTests.swift; sourceTree = "<group>"; };
 		27E25C17298DCC2E00703D45 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		27E25C1B298DCFF300703D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27E25C1F298DD31900703D45 /* BinderPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,7 @@
 		278EADBB2911F0A500BFB09D /* PokeDexTCG */ = {
 			isa = PBXGroup;
 			children = (
+				27E25C1E298DD2F600703D45 /* Pages */,
 				272BE72C2911F9BC00E3F556 /* TCGAPI */,
 				278EADBC2911F0A500BFB09D /* PokeDexTCGApp.swift */,
 				278EADBE2911F0A500BFB09D /* ContentView.swift */,
@@ -129,6 +133,14 @@
 				27A5F6402912253F009702E4 /* PokeDexTCGTests.swift */,
 			);
 			path = PokeDexTCGTests;
+			sourceTree = "<group>";
+		};
+		27E25C1E298DD2F600703D45 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				27E25C1F298DD31900703D45 /* BinderPageView.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +246,7 @@
 				272BE7312911FD7300E3F556 /* PokeService.swift in Sources */,
 				278EADBF2911F0A500BFB09D /* ContentView.swift in Sources */,
 				272BE72F2911FA0000E3F556 /* Card.swift in Sources */,
+				27E25C20298DD31900703D45 /* BinderPageView.swift in Sources */,
 				278EADBD2911F0A500BFB09D /* PokeDexTCGApp.swift in Sources */,
 				278479EE291210F200E62592 /* CardResult.swift in Sources */,
 				278479F029121FC100E62592 /* CardQueryResult.swift in Sources */,
@@ -245,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A5F6412912253F009702E4 /* PokeDexTCGTests.swift in Sources */,
+				27E25C21298DD31900703D45 /* BinderPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
