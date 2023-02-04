@@ -9,6 +9,16 @@ import SwiftUI
 
 struct CardView: View {
     @State var card: Card?
+    @State var cardId: String?
+    
+    init(card: Card? = nil) {
+        self.card = card
+    }
+    
+    init(cardId: String) {
+        self.cardId = cardId
+    }
+    
     var body: some View {
         VStack {
             AsyncImage(url: card?.lowResImageURL,
@@ -23,18 +33,15 @@ struct CardView: View {
         }
         .padding()
         .task {
-            await loadCard()
+            await loadCard(id: cardId)
         }
     }
     
-    func loadCard() async {
-        do {
-            let card = try await PokeService.instance.getCardById(id:"xy1-1")
-            self.card = card
-            print(self.card!)
-        } catch {
-            print("failed")
-            print(error)
+    func loadCard(id: String?) async {
+        if id == nil {
+            card = await Card.cardFromId(id: "xy1-1") // placeholder
+        } else {
+            card = await Card.cardFromId(id: id!)
         }
     }
 }
