@@ -26,6 +26,17 @@ struct Card: Decodable {
     var convertedRetreatCost: Int
     var subtypes: Array<String>
     
+    static func cardFromId(id: String) async -> Card {
+        var card: Card? = nil
+        do {
+            card = try await PokeService.instance.getCardById(id: id)
+        } catch {
+            print("failed to pull card")
+            print(error)
+        }
+        return card!
+    }
+    
     var lowResImageURL: URL? {
         return self.images["small"]
     }
