@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SideBarView: View {
     @State private var query = ""
+    
     var body: some View {
         NavigationView {
             List {
@@ -17,10 +18,10 @@ struct SideBarView: View {
                 } label: {
                     Label("Binder", systemImage: "book.closed")
                 }
-                Label("About", systemImage: "info.circle")
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Pokemon TCG DEX")
+            BinderPageView()
         }
         .searchable(text: $query)
         .onSubmit(of: .search) {
