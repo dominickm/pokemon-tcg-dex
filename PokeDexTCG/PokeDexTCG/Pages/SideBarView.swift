@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SideBarView: View {
+    @State private var query = ""
     var body: some View {
         NavigationView {
             List {
@@ -17,11 +18,10 @@ struct SideBarView: View {
                     Label("Binder", systemImage: "book.closed")
                 }
                 Label("About", systemImage: "info.circle")
-                Label("Search", systemImage: "magnifyingglass")
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Pokemon TCG DEX")
-        }
+        }.searchable(text: $query)
     }
 }
 

@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct BinderPageView: View {
-    @State private var query = ""
-    
+struct BinderPageView: View {    
     var body: some View {
         VStack {
             Grid() {
