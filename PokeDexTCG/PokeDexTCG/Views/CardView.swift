@@ -9,6 +9,12 @@ import SwiftUI
 
 struct CardView: View {
     @State var card: Card?
+    @State var isFaceUp = true
+    @State var backAngle = 0
+    @State var faceAngle = -90
+    
+    let animationDuration : CGFloat = 0.3
+
     var cardId: String
     
     init(card: Card? = nil) {
@@ -22,28 +28,32 @@ struct CardView: View {
     }
     
     var body: some View {
-        VStack {
-            AsyncImage(url: card?.lowResImageURL,
-                       content: { image in
-                image.resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .scaledToFit()
-            },
-                       placeholder: {
-                ProgressView()
-            })
+        ZStack {
+            CardFrontView(cardId: self.cardId)
         }
         .padding()
-        .task {
-            await self.loadCard(id: self.cardId)
+        .onTapGesture {
+            self.flip()
         }
     }
     
-    func loadCard(id: String?) async {
-        if id == nil {
-            card = await Card.cardFromId(id: "xy1-1") // placeholder
+    func flip() {
+        self.isFaceUp = !self.isFaceUp
+        if self.isFaceUp {
+            withAnimation(.linear(duration: animationDuration)) {
+                backAngle = 90
+            }
+            withAnimation(.linear(duration: animationDuration).delay(animationDuration)){
+                faceAngle = 0
+            }
         } else {
-            card = await Card.cardFromId(id: id!)
+            withAnimation(.linear(duration: animationDuration)) {
+                faceAngle = -90
+            }
+            withAnimation(.linear(duration: animationDuration).delay(animationDuration)){
+                backAngle = 0
+            }
+            
         }
     }
 }
