@@ -22,6 +22,8 @@
 		27E25C26298DD45300703D45 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E25C24298DD45300703D45 /* CardView.swift */; };
 		27E25C28298DED6300703D45 /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E25C27298DED6300703D45 /* CardFrontView.swift */; };
 		27E25C29298DED6300703D45 /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E25C27298DED6300703D45 /* CardFrontView.swift */; };
+		27E25C2E298E0EA400703D45 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E25C2D298E0EA400703D45 /* SideBarView.swift */; };
+		27E25C2F298E114300703D45 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E25C2D298E0EA400703D45 /* SideBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		27E25C1F298DD31900703D45 /* BinderPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinderPageView.swift; sourceTree = "<group>"; };
 		27E25C24298DD45300703D45 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		27E25C27298DED6300703D45 /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
+		27E25C2D298E0EA400703D45 /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,7 @@
 		27E25C1E298DD2F600703D45 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				27E25C2D298E0EA400703D45 /* SideBarView.swift */,
 				27E25C1F298DD31900703D45 /* BinderPageView.swift */,
 			);
 			path = Pages;
@@ -262,6 +266,7 @@
 				272BE7312911FD7300E3F556 /* PokeService.swift in Sources */,
 				278EADBF2911F0A500BFB09D /* ContentView.swift in Sources */,
 				27E25C28298DED6300703D45 /* CardFrontView.swift in Sources */,
+				27E25C2E298E0EA400703D45 /* SideBarView.swift in Sources */,
 				272BE72F2911FA0000E3F556 /* Card.swift in Sources */,
 				27E25C20298DD31900703D45 /* BinderPageView.swift in Sources */,
 				278EADBD2911F0A500BFB09D /* PokeDexTCGApp.swift in Sources */,
@@ -278,6 +283,7 @@
 				27E25C29298DED6300703D45 /* CardFrontView.swift in Sources */,
 				27A5F6412912253F009702E4 /* PokeDexTCGTests.swift in Sources */,
 				27E25C26298DD45300703D45 /* CardView.swift in Sources */,
+				27E25C2F298E114300703D45 /* SideBarView.swift in Sources */,
 				27E25C21298DD31900703D45 /* BinderPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

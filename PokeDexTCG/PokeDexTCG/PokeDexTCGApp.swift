@@ -11,8 +11,7 @@ import SwiftUI
 struct PokeDexTCGApp: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            BinderPageView()
+            SideBarView()
         }
     }
 }
