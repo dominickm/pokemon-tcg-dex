@@ -20,7 +20,9 @@ struct BinderPageView: View {
                 CardView(cardId: "mcd19-1")
                 CardView(cardId: "xy1-1")
             }
-        }
+        }.background(Image("charizard-bg")
+            .resizable()
+            .scaledToFill())
     }
 }
 

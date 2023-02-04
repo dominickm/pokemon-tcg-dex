@@ -20,7 +20,9 @@ struct ContentView: View {
                        placeholder: {
                            ProgressView()
                        })
-        }
+        }.background(Image("charizard-bg.jpg")
+            .resizable()
+            .scaledToFit())
         .padding()
         .task {
             await loadCard()
