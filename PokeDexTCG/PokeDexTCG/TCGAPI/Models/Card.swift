@@ -12,7 +12,7 @@ import Foundation
 struct Card: Decodable {
     var id: String
     var artist: String
-    var rarity: String
+    var rarity: String?
     var number: String
     var nationalPokedexNumbers: Array<Int>
     var name: String
