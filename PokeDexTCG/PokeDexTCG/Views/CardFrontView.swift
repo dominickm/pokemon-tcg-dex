@@ -12,12 +12,6 @@ struct CardFrontView: View {
     @State var card: Card?
     var cardId: String
     
-    init(cardId: String) {
-        self.cardId = cardId
-        _angle = Binding<Double> .constant(0)
-        print(self.cardId)
-    }
-    
     var body: some View {
         VStack {
             AsyncImage(url: card?.lowResImageURL,
@@ -29,13 +23,13 @@ struct CardFrontView: View {
                        placeholder: {
                 ProgressView()
             })
-        }
-        .rotation3DEffect(Angle(degrees: angle), axis: (x: 0, y: 1, z: 0))
+        }.rotation3DEffect(Angle(degrees: angle), axis: (x: 0, y: 1, z: 0))
         .padding()
         .task {
             await self.loadCard(id: self.cardId)
         }
     }
+
     
     func loadCard(id: String?) async {
         if id == nil {
@@ -46,8 +40,3 @@ struct CardFrontView: View {
     }
 }
 
-struct CardFrontView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardFrontView(cardId: "xy1-1")
-    }
-}
