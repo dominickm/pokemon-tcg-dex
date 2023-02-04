@@ -21,7 +21,8 @@ struct SideBarView: View {
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Pokemon TCG DEX")
-        }.searchable(text: $query)
+        }
+        .searchable(text: $query)
     }
 }
 
