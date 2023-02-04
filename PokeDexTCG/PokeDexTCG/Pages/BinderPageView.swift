@@ -11,14 +11,14 @@ struct BinderPageView: View {
     var body: some View {
         Grid() {
             GridRow {
-                CardView(cardId: "mcd19-1")
-                CardView(cardId: "det1")
+                CardView(cardId: "xy7-5")
+                CardView(cardId: "det1-4")
                 CardView(cardId: "xy2-1")
             }
             GridRow {
+                CardView(cardId: "pl1-1")
+                CardView(cardId: "mcd19-1")
                 CardView(cardId: "xy1-1")
-                CardView(cardId: "dv1-1")
-                CardView(cardId: "gym1-1")
             }
         }
     }

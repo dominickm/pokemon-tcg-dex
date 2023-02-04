@@ -9,14 +9,16 @@ import SwiftUI
 
 struct CardView: View {
     @State var card: Card?
-    @State var cardId: String?
+    var cardId: String
     
     init(card: Card? = nil) {
         self.card = card
+        self.cardId = card!.id
     }
     
     init(cardId: String) {
         self.cardId = cardId
+        print(self.cardId)
     }
     
     var body: some View {
@@ -33,7 +35,7 @@ struct CardView: View {
         }
         .padding()
         .task {
-            await loadCard(id: cardId)
+            await self.loadCard(id: self.cardId)
         }
     }
     

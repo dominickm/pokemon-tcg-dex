@@ -29,7 +29,7 @@ struct ContentView: View {
     
     func loadCard() async {
         do {
-            let card = try await PokeService.instance.getCardById(id:"xy1-1")
+            let card = try await PokeService.instance.getCardById(id:"xy2-1")
             self.card = card
             print(self.card!)
         } catch {
