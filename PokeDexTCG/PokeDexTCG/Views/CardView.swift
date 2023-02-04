@@ -10,8 +10,8 @@ import SwiftUI
 struct CardView: View {
     @State var card: Card?
     @State var isFaceUp = true
-    @State var backAngle = 0
-    @State var faceAngle = -90
+    @State var backAngle = 0.0
+    @State var faceAngle = -90.0
     
     let animationDuration : CGFloat = 0.3
 
@@ -29,7 +29,8 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            CardFrontView(cardId: self.cardId)
+            CardFrontView(angle: $faceAngle, cardId: self.cardId)
+            CardFrontView(angle: $backAngle, cardId: "g1-1")
         }
         .padding()
         .onTapGesture {
