@@ -23,6 +23,13 @@ struct SideBarView: View {
             .navigationTitle("Pokemon TCG DEX")
         }
         .searchable(text: $query)
+        .onSubmit(of: .search) {
+            search(term: query)
+        }
+    }
+    
+    func search(term: String) {
+        
     }
 }
 
