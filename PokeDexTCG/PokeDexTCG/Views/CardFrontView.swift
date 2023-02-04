@@ -20,7 +20,7 @@ struct CardFrontView: View {
                     .aspectRatio(contentMode: .fill)
                     .scaledToFit()
             },
-                       placeholder: {
+            placeholder: {
                 ProgressView()
             })
         }.rotation3DEffect(Angle(degrees: angle), axis: (x: 0, y: 1, z: 0))
