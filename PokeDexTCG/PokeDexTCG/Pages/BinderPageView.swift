@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BinderPageView: View {
-    @Binding var searchTerm: String
+    @State var searchTerm: String
     @State var cards: [Card] = []
     var threeColumnGrid = [GridItem(.flexible(minimum: 80.0, maximum: 300.00)), GridItem(.flexible(minimum: 80.0, maximum: 300)), GridItem(.flexible(minimum: 80.0, maximum: 300))] // terrible hack to prevent too large rows in FS
     
@@ -25,17 +25,30 @@ struct BinderPageView: View {
             await search()
         }
         .searchable(text: $searchTerm, prompt: "Search for a Pokemon")
+        .onSubmit(of: .search, {
+            
+        })
+        .onAppear {
+            searchTerm = "Squirtle"
+        }
+        .task {
+            await search()
+        }
     }
     
     func search() async {
+        if searchTerm.count < 4 {
+            return
+        }
         do {
-            if (searchTerm.count < 1 || searchTerm.isEmpty) {
-                searchTerm = "eevee"
-            }
             self.cards = try await PokeService.instance.getCardsBasedOnQuery(queryParams: ["name": searchTerm, "supertype": "Pokémon"])
         } catch {
             print(error)
         }
+    }
+    
+    func submitted() {
+        print("here")
     }
 }
 

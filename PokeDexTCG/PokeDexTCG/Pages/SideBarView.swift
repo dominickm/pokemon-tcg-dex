@@ -8,33 +8,22 @@
 import SwiftUI
 
 struct SideBarView: View {
-    @State private var query = ""
-    
     var body: some View {
         NavigationView {
             List {
                 NavigationLink {
-                    BinderPageView(searchTerm: $query)
+                    BinderPageView(searchTerm: "")
                 } label: {
                     Label("Binder", systemImage: "book.closed")
                 }
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Pokemon TCG DEX")
-            BinderPageView(searchTerm: $query)
-        }
-        .searchable(text: $query)
-        .onSubmit(of: .search) {
-            search(term: query)
-
+            BinderPageView(searchTerm: "")
         }
         .task {
             _ = await Card.dittoCard()
         }
-    }
-    
-    func search(term: String) {
-        
     }
 }
 
