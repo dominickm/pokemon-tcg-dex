@@ -21,15 +21,16 @@ struct BinderPageView: View {
             }
         }
         .background(LinearGradient(gradient: Gradient(colors: [.red, .gray, .white]), startPoint: .top, endPoint: .bottom))
-        .task {
+        .task(id: searchTerm) {
             await search()
         }
+        .searchable(text: $searchTerm, prompt: "Search for a Pokemon")
     }
     
     func search() async {
         do {
             if (searchTerm.count < 1 || searchTerm.isEmpty) {
-                searchTerm = "pikachu"
+                searchTerm = "eevee"
             }
             self.cards = try await PokeService.instance.getCardsBasedOnQuery(queryParams: ["name": searchTerm, "supertype": "Pokémon"])
         } catch {

@@ -26,6 +26,7 @@ struct SideBarView: View {
         .searchable(text: $query)
         .onSubmit(of: .search) {
             search(term: query)
+
         }
         .task {
             _ = await Card.dittoCard()
