@@ -25,18 +25,13 @@ struct BinderPageView: View {
             await search()
         }
         .searchable(text: $searchTerm, prompt: "Search for a Pokemon")
-        .onSubmit(of: .search, {
-            
-        })
         .onAppear {
-            searchTerm = "Squirtle"
-        }
-        .task {
-            await search()
+            searchTerm = "pikachu"
         }
     }
     
     func search() async {
+        print(searchTerm)
         if searchTerm.count < 4 {
             return
         }
@@ -45,10 +40,6 @@ struct BinderPageView: View {
         } catch {
             print(error)
         }
-    }
-    
-    func submitted() {
-        print("here")
     }
 }
 
