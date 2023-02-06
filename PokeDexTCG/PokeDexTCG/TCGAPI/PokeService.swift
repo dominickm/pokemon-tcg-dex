@@ -56,7 +56,7 @@ class PokeService {
         urlComponents.path = "/v2/cards"
         urlComponents.queryItems = [
             URLQueryItem(name: "page", value: "1"),
-            URLQueryItem(name: "pagesize", value: "12"),
+            URLQueryItem(name: "pageSize", value: "9"),
             URLQueryItem(name: "q", value: queryString)
         ]
         let (data, _) = try await URLSession.shared.data(for: self.urlRequestFromUrlComponents(urlComponents: urlComponents, method: "GET"))
