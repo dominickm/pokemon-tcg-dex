@@ -26,6 +26,10 @@ struct Card: Decodable, Identifiable {
     var convertedRetreatCost: Int?
     var subtypes: Array<String>
     
+    static func dittoCard() async -> Card {
+        return await cardFromId(id: "swsh45-50")
+    }
+    
     static func cardFromId(id: String) async -> Card {
         var card: Card? = nil
         do {
