@@ -26,8 +26,15 @@ struct Card: Decodable, Identifiable {
     var convertedRetreatCost: Int?
     var subtypes: Array<String>
     
+    static private var dittoCard: Card? = nil
+    
     static func dittoCard() async -> Card {
-        return await cardFromId(id: "swsh45-50")
+        if dittoCard == nil {
+            dittoCard = await cardFromId(id: "swsh45-50")
+            return dittoCard!
+        } else {
+            return dittoCard!
+        }
     }
     
     static func cardFromId(id: String) async -> Card {
@@ -37,6 +44,7 @@ struct Card: Decodable, Identifiable {
         } catch {
             print("failed to pull card")
             print(error)
+            return dittoCard!
         }
         return card!
     }

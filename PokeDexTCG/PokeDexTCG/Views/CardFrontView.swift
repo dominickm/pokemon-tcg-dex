@@ -33,7 +33,7 @@ struct CardFrontView: View {
     
     func loadCard(id: String?) async {
         if id == nil {
-            card = await Card.cardFromId(id: "xy1-1") // placeholder
+            card = await Card.dittoCard() // placeholder
         } else {
             card = await Card.cardFromId(id: id!)
         }

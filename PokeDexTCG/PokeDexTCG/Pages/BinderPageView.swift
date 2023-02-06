@@ -29,7 +29,7 @@ struct BinderPageView: View {
     func search() async {
         do {
             if (searchTerm.count < 1 || searchTerm.isEmpty) {
-                searchTerm = "Mr. Mime"
+                searchTerm = "pikachu"
             }
             self.cards = try await PokeService.instance.getCardsBasedOnQuery(queryParams: ["name": searchTerm, "supertype": "Pokémon"])
         } catch {
