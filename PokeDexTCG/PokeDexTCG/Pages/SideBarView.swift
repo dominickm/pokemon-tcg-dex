@@ -14,14 +14,14 @@ struct SideBarView: View {
         NavigationView {
             List {
                 NavigationLink {
-                    BinderPageView()
+                    BinderPageView(searchTerm: $query)
                 } label: {
                     Label("Binder", systemImage: "book.closed")
                 }
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Pokemon TCG DEX")
-            BinderPageView()
+            BinderPageView(searchTerm: $query)
         }
         .searchable(text: $query)
         .onSubmit(of: .search) {
