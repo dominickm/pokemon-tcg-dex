@@ -9,7 +9,7 @@ import Foundation
 
 // For now we assume all cards are Pokemon, because that's all the boy cares about :)
 
-struct Card: Decodable {
+struct Card: Decodable, Identifiable {
     var id: String
     var artist: String
     var rarity: String?
@@ -21,9 +21,9 @@ struct Card: Decodable {
     var evolvesFrom: String?
     var evolvesTo: Array<String>?  // we assume a list of len 0 is a final evolve state
     var images: Dictionary<String, URL>
-    var weaknesses: Array<Dictionary<String, String>>
-    var retreatCost: Array<String>
-    var convertedRetreatCost: Int
+    var weaknesses: Array<Dictionary<String, String>>?
+    var retreatCost: Array<String>?
+    var convertedRetreatCost: Int?
     var subtypes: Array<String>
     
     static func cardFromId(id: String) async -> Card {

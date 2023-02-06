@@ -41,9 +41,12 @@ class PokeService {
     
     func getCardsBasedOnQuery(queryParams: Dictionary<String, String>) async throws -> [Card] {
         var queryString = ""
+        let bQuote = "\""
+        let eQuote = "\""
         for key in queryParams.keys {
             guard queryParams[key]!.isEmpty else {
-                queryString = key + ":" + queryParams[key]! + " "
+                let doubleQuoted = bQuote + queryParams[key]! + eQuote
+                queryString = key + ":" + doubleQuoted
                 continue
             }
         }
@@ -52,6 +55,8 @@ class PokeService {
         urlComponents.host = "api.pokemontcg.io"
         urlComponents.path = "/v2/cards"
         urlComponents.queryItems = [
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "pagesize", value: "12"),
             URLQueryItem(name: "q", value: queryString)
         ]
         let (data, _) = try await URLSession.shared.data(for: self.urlRequestFromUrlComponents(urlComponents: urlComponents, method: "GET"))
