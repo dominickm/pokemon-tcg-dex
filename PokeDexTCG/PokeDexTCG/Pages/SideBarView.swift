@@ -27,6 +27,9 @@ struct SideBarView: View {
         .onSubmit(of: .search) {
             search(term: query)
         }
+        .task {
+            _ = await Card.dittoCard()
+        }
     }
     
     func search(term: String) {
